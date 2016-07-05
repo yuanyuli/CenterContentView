@@ -1,0 +1,14 @@
+{
+  "name": "react-native-center-content-view",
+  "version": "0.0.2",
+  "main": "library/CenterContentView.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Zhang Tian",
+  "license": "MIT",
+  "keywords": [],
+  "dependencies": {
+  },
+  "description": {}
+}
