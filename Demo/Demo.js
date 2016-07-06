@@ -113,7 +113,7 @@ export default class Demo extends Component {
 
 
         <CenterContentView
-          style={{height:180,marginTop:20,backgroundColor:'#EBEBEB',alignItems:'center'}}
+          style={{height:230,marginTop:20,backgroundColor:'#EBEBEB',alignItems:'center'}}
           space={30}
           scale={this.state.scale}
           opacity={this.state.opacity}

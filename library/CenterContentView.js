@@ -213,7 +213,7 @@ CenterContentView.PropTypes = {
 };
 
 CenterContentView.defaultProps = {
-  initialIndex: 3,
+  initialIndex: 1,
   space: 30,
   scale: 1,
   opacity: 1,
