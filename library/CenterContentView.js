@@ -205,10 +205,6 @@ CenterContentView.PropTypes = {
   style: PropTypes.oneOfType([
     PropTypes.object,
     PropTypes.number
-  ]),
-  contentStyle: PropTypes.oneOfType([
-    PropTypes.object,
-    PropTypes.number
   ])
 };
 

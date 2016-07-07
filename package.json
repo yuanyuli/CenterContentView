@@ -1,13 +1,24 @@
 {
   "name": "react-native-center-content-view",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "main": "library/CenterContentView.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yuanyuli/CenterContentView.git"
+  },
   "author": "Zhang Tian",
   "license": "MIT",
-  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/yuanyuli/CenterContentView/issues"
+  },
+  "keywords": [
+    "react-native",
+    "center",
+    "component"
+  ],
   "dependencies": {
   },
   "description": {}
