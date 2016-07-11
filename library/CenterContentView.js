@@ -55,10 +55,19 @@ export default class CenterContentView extends Component {
     });
   }
 
+  componentDidUpdate() {
+    if (this.state.isEndScroll) {
+      this.props.endScroll && this.props.endScroll(this.props.data[this.state.currentIndex], this.state.currentIndex);
+      this.setState({isEndScroll: false})
+    }
+  }
+
   handleAnimationStop(distance) {
     this.setState({
-      distance: distance
-    })
+      distance: distance,
+      isEndScroll: true
+    });
+
   }
 
   handleContainerLayout(event) {
@@ -71,7 +80,7 @@ export default class CenterContentView extends Component {
 
   handleCellLayout(event) {
     let {nativeEvent: {layout: {x, y, width, height}}} = event;
-    let offsetX = (this.state.width - this.props.space - this.state.cellWidth) / 2 - (this.state.cellWidth + this.props.space) * (this.props.initialIndex - 1);
+    let offsetX = (this.state.width - this.props.space - this.state.cellWidth) / 2 - (this.state.cellWidth + this.props.space) * (this.props.initialIndex);
 
     this.setState({
       cellWidth: width,
@@ -101,7 +110,7 @@ export default class CenterContentView extends Component {
     };
 
     let animatedViewWidth = cellWidth + space;
-    let modifiedCoefficient = (width  - cellWidth - space) / 2 ;
+    let modifiedCoefficient = (width - cellWidth - space) / 2;
 
     let content = (
       data.map((section, i) => {
@@ -176,11 +185,11 @@ export default class CenterContentView extends Component {
       coefficient = Math.floor(Math.abs(_distance) * 0.8 / _cellWidth) * direction;
     }
 
-    while (currentIndex - coefficient < 1) {
+    while (currentIndex - coefficient < 0) {
       coefficient = coefficient - 1;
     }
 
-    while (currentIndex - coefficient > data.length) {
+    while (currentIndex - coefficient > data.length -1) {
       coefficient = coefficient + 1;
     }
 
@@ -198,6 +207,7 @@ CenterContentView.PropTypes = {
   scale: PropTypes.number,
   space: PropTypes.number,
   opacity: PropTypes.number,
+  endScroll: PropTypes.func,
   renderCell: PropTypes.func,
   rotateLeft: PropTypes.string,
   rotateRight: PropTypes.string,
@@ -205,11 +215,15 @@ CenterContentView.PropTypes = {
   style: PropTypes.oneOfType([
     PropTypes.object,
     PropTypes.number
+  ]),
+  contentStyle: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.number
   ])
 };
 
 CenterContentView.defaultProps = {
-  initialIndex: 1,
+  initialIndex: 3,
   space: 30,
   scale: 1,
   opacity: 1,

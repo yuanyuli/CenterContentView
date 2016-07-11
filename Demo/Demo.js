@@ -122,6 +122,10 @@ export default class Demo extends Component {
           data={SECTIONS}
           initialIndex={3}
           renderCell={this.renderCell.bind(this)}
+          endScroll={(obj,index) => {
+          console.log('obj'+JSON.stringify(obj));
+          console.log('index'+index);
+          }}
         />
         <View
           style={{marginTop:20,width : 200 , height: 50,borderWidth:1 / PixelRatio.get(),justifyContent:'center',alignItems:'center',alignSelf:'center'}}
