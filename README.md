@@ -47,6 +47,7 @@ class Demo extends Component {
 - `opacity` (Number:[0,1]) `1` - opacity of the Cell that do not on the center of CenterContentView,
 - `rotateLeft` (String) `"0deg"` - rotate of the Cell that on the left of CenterContentView,
 - `rotateRight` (String) `"0deg"` - rotate of the Cell that on the right of CenterContentView,
+- `startScroll` (Function(obj,index)) - callback when scroll animation start
 - `endScroll` (Function(obj,index)) - callback when scroll animation stop
 
 
