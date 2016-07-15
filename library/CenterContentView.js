@@ -36,6 +36,7 @@ export default class CenterContentView extends Component {
         dx: this.state.offsetX
       }]),
       onPanResponderGrant: (evt, gestureState) => {
+        this.props.startScroll && this.props.startScroll(this.props.data[this.state.currentIndex],this.state.currentIndex);
         this.state.offsetX.setOffset(this.state.offsetX._value);
         this.state.offsetX.setValue(0);
       },
@@ -189,7 +190,7 @@ export default class CenterContentView extends Component {
       coefficient = coefficient - 1;
     }
 
-    while (currentIndex - coefficient > data.length -1) {
+    while (currentIndex - coefficient > data.length - 1) {
       coefficient = coefficient + 1;
     }
 

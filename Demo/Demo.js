@@ -122,9 +122,13 @@ export default class Demo extends Component {
           data={SECTIONS}
           initialIndex={3}
           renderCell={this.renderCell.bind(this)}
-          endScroll={(obj,index) => {
+          startScroll = {(obj,index) => {
           console.log('obj'+JSON.stringify(obj));
           console.log('index'+index);
+          }}
+          endScroll={(obj,index) => {
+          // console.log('obj'+JSON.stringify(obj));
+          // console.log('index'+index);
           }}
         />
         <View
